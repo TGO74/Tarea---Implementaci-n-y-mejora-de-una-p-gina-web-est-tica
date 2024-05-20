@@ -13,52 +13,67 @@
     <script src="https://intranet.ufro.cl/scripts/jquery.modal.js"></script>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .banner_encabezado img {
-            width: 100%;
-            height: auto;
-        }
-        .banner_mini img {
-            width: 100%;
-            height: auto;
-        }
-        .contenedor_info {
-            margin-top: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-control {
-            width: 100%;
-        }
-        .carousel-control.right, .carousel-control.left {
-            background: none !important;
-        }
-        .footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
-        .footer a {
-            color: #fff;
-        }
-        .link_menu {
-            font-size: 14px;
-            font-weight: bold;
-            color: #007bff;
-            text-decoration: none;
-        }
-        .link_menu:hover {
-            text-decoration: underline;
-        }
-        .carousel-indicators li {
-            background-color: #007bff;
-        }
+             font-family: Arial, Helvetica, sans-serif;
+             background-color: #f8f9fa;
+             color: #333;
+         }
+         .banner_encabezado img {
+             width: 100%;
+             height: auto;
+         }
+         .banner_mini img {
+             width: 100%;
+             height: auto;
+         }
+         .contenedor_info {
+             margin-top: 50px; /* Ajustado el margen superior */
+         }
+         .form-group {
+             margin-bottom: 15px;
+         }
+         .form-control {
+             width: 100%;
+             color: #007bff; /* Cambio de color para el texto del input */
+         }
+         .btn-primary {
+             background-color: #007bff;
+             border-color: #007bff;
+         }
+         .btn-primary:hover {
+             background-color: #0056b3;
+             border-color: #0056b3;
+         }
+         .carousel-control.right, .carousel-control.left {
+             background: none !important;
+         }
+         .footer {
+             margin-top: 50px;
+             padding: 20px 0;
+             background-color: #3582E5;
+             color: #fff;
+             text-align: center;
+         }
+         .footer a {
+             color: #fff;
+         }
+         .link_menu {
+             font-size: 14px;
+             font-weight: bold;
+             color: #007bff;
+             text-decoration: none;
+         }
+         .link_menu:hover {
+             text-decoration: underline;
+         }
+         .carousel-indicators li {
+             background-color: #007bff;
+         }
+         .carousel-inner .item img {
+             width: 100%;
+             height: auto;
+             max-height: 600px;
+             object-fit: cover;
+         }
     </style>
 </head>
 <body>
@@ -70,23 +85,22 @@
         <div class="col-12 banner_mini">
             <img src="https://intranet.ufro.cl/imagenes/banner_a.jpg" alt="Banner Mini">
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-12 contenedor_info">
-            <form name="Formulario" id="Formulario" method="post">
-                <div class="form-group">
-                    <label for="POPUSERNAME">RUT (Sin puntos ni guión):</label>
-                    <input type="text" name="Formulario[POPUSERNAME]" id="POPUSERNAME" class="form-control" maxLength="9" autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="XYZ">Clave Intranet:</label>
-                    <input type="password" name="Formulario[XYZ]" id="XYZ" class="form-control" maxLength="10">
-                </div>
-                <button type="button" onclick="Enviar()" class="btn btn-primary btn-block">Ingreso Intranet</button>
-                <div class="text-center" style="margin-top: 15px;">
-                    <a href="Javascript:Solicitud()" class="link_menu">Olvidé mi Clave Intranet</a> |
-                    <a href="Javascript:Solicitud()" class="link_menu">Crear Clave Intranet</a>
-                </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 contenedor_info">
+                <form name="Formulario" id="Formulario" method="post">
+                    <div class="form-group">
+                        <label for="POPUSERNAME" class="link_menu">RUT (Sin puntos ni guión):</label> <!-- Aplicar el estilo de enlace -->
+                        <input type="text" name="Formulario[POPUSERNAME]" id="POPUSERNAME" class="form-control" maxLength="9" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="XYZ" class="link_menu">Clave Intranet:</label> <!-- Aplicar el estilo de enlace -->
+                        <input type="password" name="Formulario[XYZ]" id="XYZ" class="form-control" maxLength="10">
+                    </div>
+                    <button type="button" onclick="Enviar()" class="btn btn-primary btn-block">Ingreso Intranet</button>
+                    <div class="text-center" style="margin-top: 15px;">
+                        <a href="Javascript:Solicitud()" class="link_menu">Olvidé mi Clave Intranet</a> |
+                        <a href="Javascript:Solicitud()" class="link_menu">Crear Clave Intranet</a>
+                    </div>
             </form>
         </div>
         <div class="col-md-8 col-sm-12">
@@ -130,6 +144,7 @@
             </div>
         </div>
     </div>
+</div>
     <div class="row footer">
         <div class="col-md-6 col-sm-12">
             <a href="http://www.ufro.cl" class="link_menu">Volver</a>
