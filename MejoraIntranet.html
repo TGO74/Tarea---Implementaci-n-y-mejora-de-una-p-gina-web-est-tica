@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Intranet - Universidad de La Frontera</title>
+    <link rel="icon" href="https://intranet.ufro.cl/favicon1.gif" type="image/gif">
+    <link rel="shortcut icon" href="https://intranet.ufro.cl/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://intranet.ufro.cl/css/Style_bs.css">
+    <script src="https://intranet.ufro.cl/scripts/jquery3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://intranet.ufro.cl/scripts/jquery.modal.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .banner_encabezado img {
+            width: 100%;
+            height: auto;
+        }
+        .banner_mini img {
+            width: 100%;
+            height: auto;
+        }
+        .contenedor_info {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+        }
+        .carousel-control.right, .carousel-control.left {
+            background: none !important;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+        }
+        .link_menu {
+            font-size: 14px;
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link_menu:hover {
+            text-decoration: underline;
+        }
+        .carousel-indicators li {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12 banner_encabezado">
+            <img src="https://intranet.ufro.cl/imagenes/header2.webp?v2" alt="UFRO Intranet">
+        </div>
+        <div class="col-12 banner_mini">
+            <img src="https://intranet.ufro.cl/imagenes/banner_a.jpg" alt="Banner Mini">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-12 contenedor_info">
+            <form name="Formulario" id="Formulario" method="post">
+                <div class="form-group">
+                    <label for="POPUSERNAME">RUT (Sin puntos ni guión):</label>
+                    <input type="text" name="Formulario[POPUSERNAME]" id="POPUSERNAME" class="form-control" maxLength="9" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="XYZ">Clave Intranet:</label>
+                    <input type="password" name="Formulario[XYZ]" id="XYZ" class="form-control" maxLength="10">
+                </div>
+                <button type="button" onclick="Enviar()" class="btn btn-primary btn-block">Ingreso Intranet</button>
+                <div class="text-center" style="margin-top: 15px;">
+                    <a href="Javascript:Solicitud()" class="link_menu">Olvidé mi Clave Intranet</a> |
+                    <a href="Javascript:Solicitud()" class="link_menu">Crear Clave Intranet</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="https://intranet.ufro.cl/slide/mayo2024.jpg" alt="Mayo 2024" class="img-responsive" onclick="window.open('https://pregrado.ufro.cl/images/URL2021/URL2024/Mailing-Calendario-Academico-Mayo.jpg');">
+                    </div>
+                    <div class="item">
+                        <img src="https://intranet.ufro.cl/slide/microcursos2024.jpg" alt="Microcursos 2024" class="img-responsive" onclick="window.open('https://docencia.ufro.cl/formacion-docente/microcursos/');">
+                    </div>
+                    <div class="item">
+                        <img src="https://intranet.ufro.cl/slide/Proy_DID2024.jpg" alt="Proyectos DID 2024" class="img-responsive" onclick="window.open('https://docencia.ufro.cl/PDID');">
+                    </div>
+                    <div class="item">
+                        <img src="https://intranet.ufro.cl/slide/DesDocente20241B.jpg" alt="Desarrollo Docente 2024" class="img-responsive" onclick="window.open('https://pregrado.ufro.cl/images/URL2021/URL2024/ProgramaCapacitacionDesarrolloDocente2024.pdf');">
+                    </div>
+                    <div class="item">
+                        <img src="https://intranet.ufro.cl/slide/acreditacion.jpg" alt="Acreditacion" class="img-responsive" onclick="window.open('https://acreditacion.ufro.cl/');">
+                    </div>
+                    <div class="item">
+                        <img src="https://intranet.ufro.cl/slide/reuna_zoom.png" alt="Reuna Zoom" class="img-responsive" onclick="window.open('slide/zoom2024.pdf');">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col-md-6 col-sm-12">
+            <a href="http://www.ufro.cl" class="link_menu">Volver</a>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <a href="javascript:Acerca_de()" class="link_menu">Acerca de</a>
+        </div>
+        <div class="col-12">
+            <hr>
+            <p>
+                Av. Fco.Salazar 01145 Temuco - Chile - Casilla 54-D - Teléfono:(56)45-2325000 - Fax:(56)45-2325950<br>
+                Servicios y Soporte Técnico: <b>Dirección de Informática</b><br>Contacto:
+                <a href="mailto:wdinfo@ufrontera.cl">wdinfo@ufrontera.cl</a> - Teléfono:(56)45-2325500
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    function Enviar() {
+        document.Formulario.action = "autentificar.php";
+        document.Formulario.submit();
+    }
+
+    function Solicitud() {
+        document.Formulario.action = "solicitud.php";
+        document.Formulario.submit();
+    }
+
+    function Acerca_de() {
+        window.open('acerca_de.html', 'newWnd', 'width=500,height=250,top=80,left=115,toolbar=0,status=0,scrollbars=0');
+    }
+</script>
+</body>
+</html>
+
+
